@@ -1,24 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import './App.css';
+import FormInput from './FormInput';
+import List from './List';
+import Progress from './Progress';
+
+const App = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        My to do list
       </header>
+      <div>
+      <Progress />
+      </div>
+      <div className='Form'>
+        <FormInput />
+      </div>
+      <div className='List'>
+        <List />
+      </div>
     </div>
   );
 }
