@@ -1,19 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import ListItem from './ListItem';
 
 function FormInput() {
-  
+  const [text, setText] = useState('');
+
+  function handleChange(e) {
+    setText(e.target.value);
+  }
+
+  function handleClick() {
+    setText(e.target.value)
+  }
 
   return (
+    <>
     <Form className='px-5 py-5'>
       <fieldset>
         <Form.Group className="mb-3">
           <Form.Label htmlFor="TextInput">Item</Form.Label>
           <Form.Control 
             type='text'
+            value={text}
+            onChange={handleChange}
             id="TextInput" 
             placeholder="item..." />
         </Form.Group>
@@ -28,11 +39,13 @@ function FormInput() {
         
         <Button 
           className='btn btn-info btn-lg text-white px-5 my-3'
-          type="submit" 
+          type="submit"
+          onClick={handleClick} 
 
           >Add</Button>
       </fieldset>
     </Form>
+    </>
   );
 }
 
