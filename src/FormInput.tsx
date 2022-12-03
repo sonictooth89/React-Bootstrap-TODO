@@ -2,18 +2,11 @@ import React, { useState } from 'react';
 
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import ListItem from './ListItem';
+
 
 function FormInput() {
   const [text, setText] = useState('');
 
-  function handleChange(e) {
-    setText(e.target.value);
-  }
-
-  function handleClick() {
-    setText(e.target.value)
-  }
 
   return (
     <>
@@ -24,7 +17,9 @@ function FormInput() {
           <Form.Control 
             type='text'
             value={text}
-            onChange={handleChange}
+            onChange={(e) => {
+              setText(e.target.value)
+            }}
             id="TextInput" 
             placeholder="item..." />
         </Form.Group>
@@ -40,7 +35,9 @@ function FormInput() {
         <Button 
           className='btn btn-info btn-lg text-white px-5 my-3'
           type="submit"
-          onClick={handleClick} 
+          onClick={() => {
+
+          }}
 
           >Add</Button>
       </fieldset>

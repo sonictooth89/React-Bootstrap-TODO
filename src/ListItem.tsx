@@ -4,40 +4,38 @@ import { ListGroup } from 'react-bootstrap';
 
 import './ListItem.css';
 
+const items = [
+    {
+        id: 1,
+        content: "Tidy my room",
+        complete: false
+    }, 
+    {
+        id: 2,
+        content: "Cooking dinner",
+        complete: true
+    },
+    {
+        id: 3,
+        content: "Video Call with mom",
+        complete: false
+    },
+  ];
 
-const ListItem = () => {
+export const ListItem = () => {
 
     const [id, setId] = useState(1);
     const [content, setContent] = useState('');
     const [complete, setComplete] = useState(false);
 
-    const items = [
-        {
-            id: 1,
-            content: "Tidy my room",
-            complete: false
-        }, 
-        {
-            id: 2,
-            content: "Cooking dinner",
-            complete: true
-        },
-        {
-            id: 3,
-            content: "Video Call with mom",
-            complete: false
-        },
-    ];
-
-    
 
     return (
         <div>
-            {items.map(item => {
+            {items.map(oneItem => {
                 return <ListGroup.Item 
-                            key={item.id} 
-                            className={item.complete ? "completed" : ""}>
-                                {item.id} {item.content} {item.complete ? " - done! -" : ""}
+                        key={oneItem.id} 
+                        className={oneItem.complete ? "completed" : ""}>
+                        {oneItem.id} {oneItem.content} {oneItem.complete ? " - done! -" : ""}
                         </ListGroup.Item>
             })}
         </div>
@@ -45,4 +43,3 @@ const ListItem = () => {
     )
 }
  
-export default ListItem;

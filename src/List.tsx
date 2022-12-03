@@ -1,5 +1,6 @@
 import ListGroup from 'react-bootstrap/ListGroup';
-import ListItem from './ListItem';
+import { ListItem } from './ListItem';
+
 
 function List() {
 
