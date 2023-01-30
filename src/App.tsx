@@ -9,7 +9,7 @@ const App = () => {
   return (
     <div className="App">
       <header className="App-header">
-        My to do list
+        My to do list.
       </header>
       <div>
       <Progress />
