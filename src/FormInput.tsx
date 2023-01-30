@@ -13,7 +13,7 @@ function FormInput() {
     <Form className='px-5 py-5'>
       <fieldset>
         <Form.Group className="mb-3">
-          <Form.Label htmlFor="TextInput">Item</Form.Label>
+          <Form.Label htmlFor="TextInput">Item.</Form.Label>
           <Form.Control 
             type='text'
             value={text}
